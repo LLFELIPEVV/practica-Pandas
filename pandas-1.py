@@ -69,3 +69,46 @@ myvar = pd.DataFrame(data)
 
 print("Creando un DataFrame a partir de dos series:")
 print(myvar)
+
+# DataFrames en Pandas
+# Un Pandas DataFrame es una estructura de datos bidimensional, como una matriz bidimensional o una tabla con filas y columnas.
+print()
+print(f"DataFrames en Pandas")
+
+# Creando un Pandas DataFrame simple
+data = {
+    "calories": [420, 380, 390],
+    "duration": [50, 40, 45]
+}
+
+df = pd.DataFrame(data)
+
+print("Creando un Pandas DataFrame simple:")
+print(df)
+
+# Localizar Filas
+# Podemos usar el método loc para localizar una fila específica.
+# Usamos el nombre de la fila para localizarlo.
+# Localizando la fila 0. Esto devuelve una Serie.
+print("Localizando la fila 0:")
+print(df.loc[0])
+
+# Localizando las filas 0 y 1. Esto devuelve un DataFrame.
+print("Localizando las filas 0 y 1:")
+print(df.loc[[0, 1]])
+
+# Indices con nombre
+# Con el index argumento podemos nombrar nuestras filas.
+data = {
+    "calories": [420, 380, 390],
+    "duration": [50, 40, 45]
+}
+
+df = pd.DataFrame(data, index=["day1", "day2", "day3"])
+
+print("Indices con nombre:")
+print(df)
+
+# Localizando indices con nombre
+print("Localizando indices con nombre:")
+print(df.loc["day2"])
