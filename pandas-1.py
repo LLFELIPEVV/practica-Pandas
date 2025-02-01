@@ -112,3 +112,26 @@ print(df)
 # Localizando indices con nombre
 print("Localizando indices con nombre:")
 print(df.loc["day2"])
+
+# Leer archivos CSV
+# Un archivo CSV contiene datos tabulares en forma de texto plano. Los CSV son archivos que separan datos por comas.
+# Para leer un archivo CSV en pandas, usamos el método read_csv().
+print()
+print("Leyendo archivos CSV")
+
+# Cargando un CSV en un DataFrame
+df = pd.read_csv('data.csv')
+
+print("Cargando un CSV en un DataFrame:")
+# El to_string() es para imprimir el DataFrame completo. De otro modo si el DataFrame es muy grande solo imprimira las primeras y ultimas 5 filas.
+print(df.to_string())
+
+# Filas maximas
+# La cantidad maxima de filas se define en la configuracion de opciones de Pandas.
+print("Filas maximas:")
+print(pd.options.display.max_rows)
+
+# Cambiando el maximo de filas
+pd.options.display.max_rows = 9999
+print("Cambiar el maximo de filas:")
+print(df)
