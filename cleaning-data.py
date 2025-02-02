@@ -9,7 +9,7 @@ import pandas as pd
 - Duplicados
 """
 # Limpieza de celdas vacias
-# Las celdas vacias pueden dar potencialmente dar un resultado erroneo al analizar los datos.
+# Las celdas vacias pueden dar potencialmente un resultado erroneo al analizar los datos.
 print("Limpieza de celdas vacias")
 
 # Eliminar filas
@@ -67,4 +67,23 @@ x = df["Calories"].mode()[0]
 df["Calories"] = df["Calories"].fillna(x)
 
 print("Reemplazando valores vacios con la moda")
+print(df.to_string())
+
+# Limpieza de datos con formato incorrecto
+# Los datos con formato incorrecto pueden dificultar o imposibilitar el analisis de los datos.
+# Hay dos posibles soluciones eliminar las filas o cambiar el formato de toda la columna.
+print()
+print("Limpieza de datos con formato incorrecto")
+
+# Convirtiendo datos a un formato correcto
+df = pd.read_csv("data-2.csv")
+df["Date"] = pd.to_datetime(df["Date"], errors='coerce')
+
+print("Convirtiendo datos a un formato correcto")
+print(df.to_string())
+
+# Eliminando las filas con datos vacios
+df.dropna(subset=["Date"], inplace=True)
+
+print("Eliminando las filas con datos vacios")
 print(df.to_string())
