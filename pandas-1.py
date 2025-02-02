@@ -190,3 +190,28 @@ df = pd.DataFrame(data)
 
 print(f"Diccionario en formato JSON:")
 print(df)
+
+# Analisis de DataFrames
+# El head() método devuelve las primeras filas del DataFrame.
+# El head() método devuelve las primeras 5 filas si no se especifica.
+print()
+print("Analisis de DataFrames")
+
+# Obteniendo una descripcion general de las primeras 10 filas del DataFrame.
+df = pd.read_csv('data.csv')
+
+print("Obteniendo una descripcion general de las primeras 10 filas del DataFrame:")
+print(df.head(10))
+
+# imprimiendo las primeras 5 filas del DataFrame.
+print("Imprimiendo las primeras 5 filas del DataFrame:")
+print(df.head())
+
+# Tambien se cuenta con un metodo tail() que devuelve las ultimas filas del DataFrame.
+print("Imprimiendo las ultimas 5 filas del DataFrame:")
+print(df.tail())
+
+# Informacion sobre los datos.
+# El info() método también devuelve información sobre el DataFrame. Tambien devuelve la cantidad de datos No Nulos en cada columna, lo que indica que si hay alguna columna con valores nulos, es mejor eliminar esa fila.
+print("Informacion sobre los datos:")
+print(df.info())
