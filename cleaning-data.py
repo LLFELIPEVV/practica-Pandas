@@ -87,3 +87,32 @@ df.dropna(subset=["Date"], inplace=True)
 
 print("Eliminando las filas con datos vacios")
 print(df.to_string())
+
+# Limpieza de datos erroneos
+# Los datos erroneos no tienen por que ser celdas vacias o formato incorrecto, pueden simplemente ser incorrectos, como si alguien registrara 199 en vez de 1,99.
+print()
+print("Limpieza de datos erroneos")
+
+# Reemplazando valores
+df = pd.read_csv("data-2.csv")
+df.loc[7, "Duration"] = 45
+
+print("Reemplazando valores")
+print(df.to_string())
+
+# Reemplazando valores con un loop
+for x in df.index:
+    if df.loc[x, "Duration"] > 120:
+        df.loc[x, "Duration"] = 120
+
+print("Reemplazando valores con un loop")
+print(df.to_string())
+
+# Eliminando filas
+df = pd.read_csv("data-2.csv")
+for x in df.index:
+    if df.loc[x, "Duration"] > 120:
+        df.drop(x, inplace=True)
+
+print("Eliminando filas")
+print(df.to_string())
