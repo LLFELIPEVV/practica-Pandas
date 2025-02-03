@@ -116,3 +116,21 @@ for x in df.index:
 
 print("Eliminando filas")
 print(df.to_string())
+
+# Eliminando duplicados
+# Con el duplicated() metodo se pueden descubrir duplicados.
+print()
+print("Eliminando duplicados")
+df = pd.read_csv("data-2.csv")
+
+# Devolviendo una lista de True/False
+df = pd.read_csv("data-2.csv")
+
+print("Lista de True/False")
+print(df.duplicated())
+
+# Eliminando los duplicados
+df.drop_duplicates(inplace=True)
+
+print("Eliminando los duplicados")
+print(df.to_string())
